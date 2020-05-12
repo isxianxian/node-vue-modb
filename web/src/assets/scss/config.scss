@@ -1,0 +1,85 @@
+@import "./variable";
+
+// color
+@each $colorkey, $colorval in $color {
+  .text-#{$colorkey} {
+    color: $colorval;
+  }
+  .bg-#{$colorkey} {
+    background-color: $colorval;
+  }
+}
+
+// text
+@each $textkey in [left, center, right] {
+  .text-#{$textkey} {
+    text-align: $textkey !important;
+  }
+}
+
+// font-size
+@each $sizekey, $sizeval in $font-size {
+  .fs-#{$sizekey} {
+    font-size: $sizeval * $base-font-size;
+  }
+}
+
+// flex
+@each $key, $val in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $val;
+  }
+}
+@each $key, $val in $flex-ai {
+  .ai-#{$key} {
+    align-items: $val;
+  }
+}
+
+// spacing
+@each $typekey, $typeval in $spacing-types {
+  // .m-0
+  @each $sizekey, $sizeval in $spacing-sizes {
+    .#{$typekey}-#{$sizekey} {
+      #{$typeval}: $sizeval * $spacing-base-size;
+    }
+  }
+  //   .mx-0 , x：水平轴 .my-0 y：垂直轴
+  @each $sizekey, $sizeval in $spacing-sizes {
+    .#{$typekey}x-#{$sizekey} {
+      #{$typeval}-left: $sizeval * $spacing-base-size;
+      #{$typeval}-right: $sizeval * $spacing-base-size;
+    }
+    .#{$typekey}y-#{$sizekey} {
+      #{$typeval}-top: $sizeval * $spacing-base-size;
+      #{$typeval}-bottom: $sizeval * $spacing-base-size;
+    }
+  }
+
+  //   .mt-0
+  @each $directionkey, $directionval in $spacing-directions {
+    @each $sizekey, $sizeval in $spacing-sizes {
+      .#{$typekey}#{$directionkey}-#{$sizekey} {
+        #{$typeval}-#{$directionval}: $sizeval * $spacing-base-size;
+      }
+    }
+  }
+}
+
+// border
+@each $key in [ top, bottom, left, right] {
+  .border-#{$key} {
+    border-#{$key}: 1px solid $border-color;
+  }
+}
+
+@each $key, $val in $position {
+  .pos-#{$key} {
+    position: $val;
+  }
+}
+@mixin pos($pos: "absoluted", $top: 0, $left: 0) {
+  position: $pos;
+  top: $top;
+  left: $left;
+}

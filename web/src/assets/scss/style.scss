@@ -1,0 +1,86 @@
+@import "./variable";
+
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+// font-weight：normal
+.fw-normal {
+  font-weight: normal;
+}
+
+// width height
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
+// box-sizing
+.b-s {
+  box-sizing: border-box;
+}
+
+// btn
+.btn {
+  border: none;
+  outline: 0;
+  font-size: map-get($font-size, "sm") * $base-font-size;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.1538rem;
+}
+// 精灵图
+.sprite {
+  display: inline-block;
+  background: url("../../assets/img/index.png") no-repeat 0 0;
+  background-size: 28.8462rem; //375px
+}
+.sprite-arrow {
+  width: 0.7692rem;
+  height: 0.7692rem;
+  background-position: 38.577% 52.076%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  .nav-link {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    &.active {
+      color: map-get($map: $color, $key: primary);
+      border-bottom-color: map-get($map: $color, $key: primary);
+    }
+  }
+
+  &.nav-inverse {
+    .nav-link {
+      color: map-get($map: $color, $key: "white");
+      &.active {
+        border-bottom-color: map-get($map: $color, $key: "white");
+      }
+    }
+  }
+}
+
+.text-hide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bo-radiu {
+  border-radius: 50%;
+}
+
+.flex-1 {
+  flex: 1;
+  // flex-grow :1 当有多余的地方自动拉伸
+}
