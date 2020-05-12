@@ -30,8 +30,7 @@ axios.interceptors.response.use(res => {
     let msg = err.response.data.msg || err.response.data.message,
         status = err.response.status;
     msg ? Message.error(msg) : '';
-    // status == 401 ? router.push('/login') : ""
-    status == 402 ? router.push('/login') : ""
+    status == 401 ? router.push('/login') : ""
 })
 
 export default axios;

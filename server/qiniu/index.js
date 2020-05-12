@@ -2,9 +2,9 @@ module.exports = (app) => {
     const qiniu = require('qiniu');
     const myconfig = {
         // 个人中心->秘钥管理->AccessKey
-        "AK": "r2gFCgsUDwaSX2X0IoHpeTLDj7n5ivnBN2bpvviw",
+        "AK": "",
         // 个人中心->秘钥管理->SecretKey
-        "SK": "fciCgvcHUt5kXFwPmQ1h--Fp1HIVq_VjkoTbnPFl",
+        "SK": "",
         // 对象存储->新建存储空间的名字：(你自己创建时候空间名字)，这里我创建的是：jiuchengjsfront
         "Bucket": "hero-game"
     }
